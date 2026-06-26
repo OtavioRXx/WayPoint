@@ -1,0 +1,9 @@
+Primeiro crie um banco chamado "WayPointBD";
+Insira os dados do arquivo dados_iniciais.sql SEPARADAMENTE, começando pelos dados da linha e em seguida o das paradas;
+Caso tenha algum erro relacionado a AUTO-INCREMENT na tabela linha use o comando "DELETE FROM linha;" e em seguida use o comando "ALTER TABLE linha AUTO_INCREMENT = 1;"
+E para usar o comando select pra ver se deu certo é: 
+SELECT p.*, l.nome
+FROM parada p
+JOIN linha l ON p.linha_id = l.id
+WHERE p.linha_id = 1
+ORDER BY p.sentido, p.ordem;
